@@ -4,16 +4,16 @@ import { MAIN_CATEGORIES } from "@/lib/categories";
 
 const categoryKeys = Object.keys(MAIN_CATEGORIES) as Array<keyof typeof MAIN_CATEGORIES>;
 
-export default function HomePage() {
+export default function CategoriesPage() {
   return (
-    <div className="min-h-screen w-full px-5 pt-8 pb-24 bg-black text-white">
-      <h1 className="text-lg font-semibold mb-4">Shop by Category</h1>
+    <div className="min-h-screen bg-black text-white px-5 pt-8 pb-24">
+      <h1 className="text-lg font-semibold mb-4">Categories</h1>
 
       <div className="grid grid-cols-2 gap-4">
         {categoryKeys.map((key) => (
           <CategoryCard
             key={key}
-            name={key.toUpperCase()}
+            name={MAIN_CATEGORIES[key].name}
             href={`/categories/${key}`}
             icon={MAIN_CATEGORIES[key].icon}
           />

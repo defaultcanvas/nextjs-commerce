@@ -1,0 +1,26 @@
+[
+  {
+    "id": "m-hood-1",
+    "title": "Nike Tech Fleece Hoodie",
+    "price": 109.99,
+    "image": "/products/nike-tech-black.jpg",
+    "category": "men",
+    "sub": "hoodies"
+  },
+  {
+    "id": "m-tee-1",
+    "title": "Fear of God Essentials Tee",
+    "price": 65,
+    "image": "/products/essentials-tee.jpg",
+    "category": "men",
+    "sub": "t-shirts"
+  },
+  {
+    "id": "w-hood-1",
+    "title": "Adidas Originals Pink Hoodie",
+    "price": 89.99,
+    "image": "/products/adidas-pink-hoodie.jpg",
+    "category": "women",
+    "sub": "hoodies"
+  }
+]
