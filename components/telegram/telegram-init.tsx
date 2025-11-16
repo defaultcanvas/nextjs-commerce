@@ -19,14 +19,14 @@ export default function TelegramInit() {
     const tg = window.Telegram?.WebApp;
     if (!tg) return;
 
-    tg.ready();
-    tg.expand();
-    tg.enableClosingConfirmation();
-    tg.setBackgroundColor("#000000");
-    tg.setHeaderColor("#000000");
+    tg.ready?.();
+    tg.expand?.();
+    tg.enableClosingConfirmation?.();
+    tg.setBackgroundColor?.("#000000");
+    tg.setHeaderColor?.("#000000");
 
     function applyTheme() {
-      const scheme = tg.colorScheme;
+      const scheme = tg?.colorScheme;
       document.documentElement.classList.toggle("tg-light", scheme === "light");
       document.documentElement.classList.toggle("tg-dark", scheme !== "light");
     }

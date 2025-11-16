@@ -4,11 +4,13 @@ import BlurCard from "@/components/ui/BlurCard";
 import BottomNav from "@/components/layout/BottomNav";
 import { SAMPLE_PRODUCTS } from "@/lib/sample-products";
 
-export default function ProductList({ params }: { params: { category: string; subcategory: string } }) {
-  const { category, subcategory } = params;
-
+export default async function ProductList({ params }: { params: { category: string; subcategory: string } }) {
+  const { category, subcategory } = await params;
+  const normSub = subcategory?.toLowerCase() ?? "";
   const products = SAMPLE_PRODUCTS.filter(
-    (product) => product.category === category && product.subcategory === subcategory
+    (product) =>
+      product.category === category &&
+      product.subcategory?.toLowerCase() === normSub
   );
 
   return (
