@@ -12,13 +12,6 @@ type TelegramWebApp = {
   onEvent: (event: string, handler: () => void) => void;
 };
 
-declare global {
-  interface Window {
-    Telegram?: {
-      WebApp?: TelegramWebApp;
-    };
-  }
-}
 
 export default function TelegramInit() {
   useEffect(() => {

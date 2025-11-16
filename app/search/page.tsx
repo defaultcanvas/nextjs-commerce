@@ -12,7 +12,7 @@ export default function SearchPage() {
 
   return (
     <div className="pb-24">
-      <SearchBar onSearch={(query) => setResults(searchProducts(query))} />
+      <SearchBar onSearchAction={(query) => setResults(searchProducts(query))} />
       <input
         type="text"
         placeholder="Search products…"

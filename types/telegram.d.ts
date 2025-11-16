@@ -22,6 +22,13 @@ interface TelegramWebApp {
     message: string;
     buttons?: Array<{ id: string; type: "default" | "destructive" | "close"; text: string }>;
   }) => void;
+  ready?: () => void;
+  expand?: () => void;
+  enableClosingConfirmation?: () => void;
+  setBackgroundColor?: (color: string) => void;
+  setHeaderColor?: (color: string) => void;
+  colorScheme?: string;
+  onEvent?: (event: string, handler: () => void) => void;
 }
 
 declare global {
