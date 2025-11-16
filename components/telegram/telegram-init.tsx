@@ -32,7 +32,9 @@ export default function TelegramInit() {
     }
 
     applyTheme();
-    tg.onEvent("themeChanged", applyTheme);
+    if (typeof tg.onEvent === "function") {
+      tg.onEvent("themeChanged", applyTheme);
+    }
   }, []);
 
   return null;
