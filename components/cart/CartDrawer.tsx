@@ -63,17 +63,19 @@ export default function CartDrawer() {
           <h2 className="text-lg font-semibold mb-4">Your Cart</h2>
 
           <div className="space-y-3 mb-5">
-            {items.map((item, index) => (
-              <div key={`${item.id}-${index}`} className="flex items-center gap-3">
-                <div className="relative h-16 w-16 overflow-hidden rounded-xl">
-                  <Image
-                    src={item.images[0]}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                    sizes="64px"
-                  />
-                </div>
+            {items.map((item, index) => {
+              const img = (item as any).images?.[0] || "/placeholder.svg";
+              return (
+                <div key={`${item.id}-${index}`} className="flex items-center gap-3">
+                  <div className="relative h-16 w-16 overflow-hidden rounded-xl">
+                    <Image
+                      src={img}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="64px"
+                    />
+                  </div>
 
                 <div className="flex-1">
                   <div className="text-sm">{item.title}</div>
@@ -83,8 +85,9 @@ export default function CartDrawer() {
                 <button onClick={() => removeItem(item.id)} className="text-red-400 text-xs">
                   Remove
                 </button>
-              </div>
-            ))}
+                </div>
+              );
+            })}
 
             {items.length === 0 && <p className="text-sm text-white/60">Your cart is empty.</p>}
           </div>

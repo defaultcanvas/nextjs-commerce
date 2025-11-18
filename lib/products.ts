@@ -8,7 +8,6 @@ export interface ProductVariant {
 }
 
 export interface Product extends SampleProduct {
-  image: string;
   sub: string;
   subtitle: string;
   subcategory: string;
@@ -32,7 +31,6 @@ const sampleProducts: Product[] = SAMPLE_PRODUCTS.map((item) => {
 
   return {
     ...item,
-    image: images[0],
     sub: item.subcategory,
     subtitle: "",
     subcategory: toSubcategorySlug(item.subcategory),
@@ -48,14 +46,3 @@ const sampleProducts: Product[] = SAMPLE_PRODUCTS.map((item) => {
 
 export const PRODUCTS: Product[] = sampleProducts;
 
-export async function getProductsBySub(category: string, sub: string) {
-  return sampleProducts.filter(
-    (product) => normalise(product.category) === normalise(category) && normalise(product.sub) === normalise(sub)
-  );
-}
-
-export function getBy(main: string, sub: string): Product[] {
-  return PRODUCTS.filter(
-    (product) => normalise(product.category) === normalise(main) && normalise(product.subcategory) === normalise(sub)
-  );
-}

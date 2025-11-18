@@ -1,13 +1,26 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import BlurCard from "@/components/ui/BlurCard";
 import BottomNav from "@/components/layout/BottomNav";
-import { SAMPLE_PRODUCTS } from "@/lib/sample-products";
+import { useAdminStore } from "@/lib/use-admin-store";
+import { getDemoProducts } from "@/lib/catalog-demo";
+import { useEffect, useState } from "react";
+import React from "react";
+import { useParams } from "next/navigation";
 
-export default async function ProductList({ params }: { params: { category: string; subcategory: string } }) {
-  const { category, subcategory } = await params;
-  const normSub = subcategory?.toLowerCase() ?? "";
-  const products = SAMPLE_PRODUCTS.filter(
+
+export default function ProductList() {
+  const params = useParams();
+  const categoryRaw = params?.category;
+  const subcategoryRaw = params?.subcategory;
+  const category = decodeURIComponent(Array.isArray(categoryRaw) ? categoryRaw[0] : (categoryRaw ?? ""));
+  const subcategory = decodeURIComponent(Array.isArray(subcategoryRaw) ? subcategoryRaw[0] : (subcategoryRaw ?? ""));
+  const normSub = subcategory.toLowerCase();
+  const { products } = useAdminStore();
+  const demoProducts = getDemoProducts();
+  const source = products.length ? products : demoProducts;
+  const filtered = source.filter(
     (product) =>
       product.category === category &&
       product.subcategory?.toLowerCase() === normSub
@@ -16,33 +29,27 @@ export default async function ProductList({ params }: { params: { category: stri
   return (
     <div className="min-h-screen bg-black text-white px-5 pt-8 pb-24">
       <h1 className="text-lg font-semibold mb-4 capitalize">
-        {subcategory} ({products.length})
+        {subcategory} ({filtered.length})
       </h1>
-
       <div className="grid grid-cols-2 gap-4">
-        {products.map((product) => (
+        {filtered.map((product) => (
           <Link key={product.id} href={`/product/${product.id}`}>
             <BlurCard className="p-2">
               <div className="relative w-full h-36 mb-2">
-                <Image
-                  src={product.images[0]}
-                  alt={product.title}
-                  fill
-                  className="object-cover rounded-xl"
-                  sizes="(min-width: 768px) 25vw, 45vw"
-                />
+                {/* You may want to add image support to admin products */}
+                <div className="flex items-center justify-center h-full text-white/40 text-xs">No image</div>
               </div>
               <div className="text-xs">{product.title}</div>
-              <div className="text-sm font-semibold mt-1">£{product.price.toFixed(2)}</div>
+              <div className="text-sm font-semibold mt-1">
+                £{product.price ? product.price : "-"}
+              </div>
             </BlurCard>
           </Link>
         ))}
       </div>
-
-      {products.length === 0 && (
+      {filtered.length === 0 && (
         <p className="text-sm text-white/60 mt-6">No products found in this category yet.</p>
       )}
-
       <BottomNav />
     </div>
   );

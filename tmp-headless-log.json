@@ -1,0 +1,127 @@
+[
+  {
+    "kind": "console",
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "console",
+    "type": "log",
+    "text": "[HMR] connected",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "visit",
+    "url": "http://localhost:3001/",
+    "status": 200
+  },
+  {
+    "kind": "console",
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "console",
+    "type": "log",
+    "text": "[HMR] connected",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "visit",
+    "url": "http://localhost:3001/admin",
+    "status": 200
+  },
+  {
+    "kind": "console",
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "console",
+    "type": "log",
+    "text": "[HMR] connected",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "visit",
+    "url": "http://localhost:3001/categories",
+    "status": 200
+  },
+  {
+    "kind": "console",
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "console",
+    "type": "log",
+    "text": "[HMR] connected",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "visit",
+    "url": "http://localhost:3001/shop/men/hoodies",
+    "status": 200
+  },
+  {
+    "kind": "console",
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "console",
+    "type": "log",
+    "text": "[HMR] connected",
+    "location": {
+      "url": "http://localhost:3001/_next/static/chunks/node_modules_next_dist_7a8122d0._.js",
+      "lineNumber": 2287,
+      "columnNumber": 27
+    }
+  },
+  {
+    "kind": "visit",
+    "url": "http://localhost:3001/product/prod-1763442498959",
+    "status": 200
+  }
+]

@@ -7,10 +7,12 @@ interface ProductCardProps {
   id: string;
   title: string;
   price: number;
-  image: string;
+  images?: string[];
 }
 
-export default function ProductCard({ id, title, price, image }: ProductCardProps) {
+export default function ProductCard({ id, title, price, images }: ProductCardProps) {
+  const img = images?.[0] || "/placeholder.svg";
+
   return (
     <Link
       href={`/product/${id}`}
@@ -18,7 +20,7 @@ export default function ProductCard({ id, title, price, image }: ProductCardProp
     >
       <div className="relative w-full aspect-[4/5] overflow-hidden">
         <Image
-          src={image}
+          src={img}
           alt={title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"

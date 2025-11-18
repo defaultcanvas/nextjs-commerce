@@ -18,28 +18,31 @@ export default function CartPage() {
         <p className="text-white/60 mt-6">Your cart is empty.</p>
       ) : (
         <div className="space-y-4">
-          {items.map((item, index) => (
-            <BlurCard key={`${item.id}-${index}`} className="p-3 flex items-center gap-3">
-              <div className="relative h-16 w-16 overflow-hidden rounded-xl">
-                <Image
-                  src={item.images[0]}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                  sizes="64px"
-                />
-              </div>
+          {items.map((item, index) => {
+            const img = (item as any).images?.[0] || "/placeholder.svg";
+            return (
+              <BlurCard key={`${item.id}-${index}`} className="p-3 flex items-center gap-3">
+                <div className="relative h-16 w-16 overflow-hidden rounded-xl">
+                  <Image
+                    src={img}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </div>
 
-              <div className="flex-1 text-sm">
-                <div className="font-medium">{item.title}</div>
-                <div className="text-white/60">£{item.price.toFixed(2)}</div>
-              </div>
+                <div className="flex-1 text-sm">
+                  <div className="font-medium">{item.title}</div>
+                  <div className="text-white/60">£{item.price.toFixed(2)}</div>
+                </div>
 
-              <button onClick={() => removeItem(item.id)} className="text-red-400 text-xs">
-                Remove
-              </button>
-            </BlurCard>
-          ))}
+                <button onClick={() => removeItem(item.id)} className="text-red-400 text-xs">
+                  Remove
+                </button>
+              </BlurCard>
+            );
+          })}
         </div>
       )}
 
